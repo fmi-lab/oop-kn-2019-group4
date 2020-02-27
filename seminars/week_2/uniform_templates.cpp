@@ -1,5 +1,4 @@
 #include<iostream>
-#include<algorithm>
 #include<cassert>
 // Template function that evaluates the sum of two arguments
 // Note that both arguments are of the same type but the result can be a different one
