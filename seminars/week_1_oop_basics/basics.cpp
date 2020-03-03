@@ -15,15 +15,15 @@ class ContactInformation{
         strcpy(address, new_address);
     }
 
-    const char* getAddress() {
+    const char* getAddress() const{
         return address;
     }
 
-    const char* getPhone() {
+    const char* getPhone() const{
         return phone_number;
     }
 
-    void print() {
+    void print() const{
         std::cout   << "Phone number: " << phone_number << '\n'
                     << "Address: " << address << '\n';
     }
