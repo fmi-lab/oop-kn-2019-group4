@@ -21,5 +21,4 @@ public:
     void deserialize(std::istream& in);
 };
 
-
 #endif /* ifndef TEACHER_H */

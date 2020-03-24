@@ -93,8 +93,8 @@ int main() {
     Teacher constructorTest(teachers[0]);
     Student constructorTest2(students[0]);
     
-    std::cout << constructorTest.firstName;
-    std::cout << constructorTest2.firstName;
+    std::cout << constructorTest.firstName << std::endl;
+    std::cout << constructorTest2.firstName << std::endl;
 
     char fileName[100] = "students.txt";
     serializationTesting(teachers[0], students, size, fileName);

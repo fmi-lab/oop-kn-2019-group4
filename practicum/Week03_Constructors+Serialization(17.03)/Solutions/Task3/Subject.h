@@ -12,8 +12,10 @@ public:
 
     Subject () : students(nullptr), studentsSize(0) {};
     Subject (Student * _students, int _studentsSize,  Teacher& _teacher);
-
-    void copy(Student * _students, int _studentsSize, Teacher& _teacher);
+    Subject(const Subject &otherSubject); 
+    Subject& operator=(const Subject & otherSubject); 
+ 
+    void copy(Student * _students, int _studentsSize, Teacher _teacher);
     void serialize(char * fileName);
     void deserialize(char * fileName);
     void printStudentsAndTeacher();

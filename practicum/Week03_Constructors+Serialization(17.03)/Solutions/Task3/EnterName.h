@@ -1,4 +1,6 @@
-#pragma once
+#ifndef FUNCTION_H
+#define FUNCTION_H 
+
 #include <iostream>
 #include <string.h>
 
@@ -16,3 +18,5 @@ void enterName(T& toBeNamed) {
     strcpy(toBeNamed.firstName, firstName);
     strcpy(toBeNamed.lastName, lastName);
 }
+
+#endif /* ifndef FUNCTION_H */

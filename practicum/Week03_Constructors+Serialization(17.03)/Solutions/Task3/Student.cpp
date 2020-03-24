@@ -32,9 +32,17 @@ Student::Student(Student const& otherStudent) {
 
 Student& Student::operator=(Student const& otherStudent) {
     if(this != &otherStudent) { //this is here so we don't write student = student. We don't want to copy ourselves
-        delete[] this->firstName;
-        delete[] this->lastName;
-        delete[] this->scores;
+        if(this->firstName != nullptr) {
+            delete[] this->firstName;
+        }
+
+        if(this->lastName != nullptr) {
+            delete[] this->lastName;
+        }
+
+        if(this->scores != nullptr) {
+            delete[] this->scores;
+        }
 
         this->copy(otherStudent.firstName, otherStudent.lastName, otherStudent.fn, otherStudent.scoresSize, otherStudent.scores);   
     }
@@ -65,9 +73,9 @@ void Student::create() {
     std::cin.get();
 
     std::cout << "Enter number of subjects a student has and his scores" << std::endl;
-    std::cin >> scoresSize;
+    std::cin >> this->scoresSize;
 
-    scores = new int[scoresSize];
+    this->scores = new int[scoresSize];
 
     for (int j = 0; j < scoresSize; j++)
     {

@@ -3,7 +3,7 @@
 #include <fstream>
 #include <string.h>
 
-void Subject::copy(Student * _students, int _studentsSize, Teacher& _teacher) {
+void Subject::copy(Student * _students, int _studentsSize, Teacher _teacher) {
     this->teacher = _teacher;
 
     this->studentsSize = _studentsSize;
@@ -17,6 +17,23 @@ void Subject::copy(Student * _students, int _studentsSize, Teacher& _teacher) {
 Subject::Subject (Student * _students, int _studentsSize, Teacher& _teacher) {
     this->copy(_students, _studentsSize, _teacher);   
 }
+
+Subject::Subject(const Subject &otherSubject) {
+    this->copy(otherSubject.students, otherSubject.studentsSize, otherSubject.teacher);   
+}
+
+Subject& Subject::operator=(const Subject & otherSubject) {
+    if(this != &otherSubject) {
+        if(this->students != nullptr) {
+            delete[] this->students;
+        }
+
+        this->copy(otherSubject.students, otherSubject.studentsSize, otherSubject.teacher);
+    }
+
+    return *this;
+}
+
 
 
 void Subject::serialize(char * fileName) {

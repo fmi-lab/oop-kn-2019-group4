@@ -15,7 +15,7 @@ public:
     Student(char * _firstName, char * _lastName, int _fn, int _scoresSize, int * _scores);
     Student(Student const& otherStudent);
     Student& operator=(Student const& otherStudent);
-
+    
     void copy(char * _firstName, char * _lastName, int _fn, int _scoresSize, int * _scores);
     double averageScore();
     void print();
