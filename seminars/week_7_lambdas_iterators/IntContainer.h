@@ -27,8 +27,14 @@ class IntContainer {
         int operator *(){
             return *elem;
         }
-        void operator ++(){
+        MyIterator& operator ++(){
             elem++;
+            return *this;
+        }
+        MyIterator operator ++(int _elem){
+            MyIterator result(*this);
+            elem++;
+            return result;
         }
         ~MyIterator(){
             delete elem;

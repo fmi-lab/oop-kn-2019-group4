@@ -22,4 +22,7 @@ int main() {
     for(auto elem : test_container) {
         std::cout << elem;
     }
+    for(IntContainer::MyIterator i = test_container.begin(); i != test_container.end(); i++){
+        
+    }
 }
